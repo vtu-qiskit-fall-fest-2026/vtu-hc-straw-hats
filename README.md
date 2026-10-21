@@ -46,9 +46,9 @@
 
 | # | Name | GitHub Username | Role |
 | :-- | :--- | :--- | :--- |
-| 1 | _Add your name_ | _your-github-username_ | _Team Lead_ |
-| 2 | _Add your name_ | _your-github-username_ | _Developer_ |
-| 3 | _Add your name_ | _your-github-username_ | _Developer_ |
+| 1 | Karthik Dharmapuri | joyboy2k5 | _Team Lead_ |
+| 2 | Surya anish | NSURYAANISH3860 | _Developer_ |
+
 
 <!--
 Optional: add a plain list instead of the table above.
@@ -66,11 +66,11 @@ who experiences it, and why does it matter. Link to the official problem
 statement from the brief if one applies.
 -->
 
-**Problem:** _Describe the problem in 2–3 sentences._
+**Problem:** Detecting malicious network traffic accurately while minimizing false alarms remains a challenge in cybersecurity.
 
-**Why it matters:** _Explain the impact or opportunity._
+**Why it matters:** Exploring quantum machine learning could reveal new approaches to identifying complex patterns in network traffic.
 
-**Track / Category:** _Online / Offline · Track 1 / Track 2 · <domain>_
+**Track / Category:** Online · Quantum Computing / Cybersecurity
 
 ---
 
@@ -81,46 +81,47 @@ Describe your solution. Keep it concrete: the core idea, the user flow, and
 the quantum/ML technique you are applying.
 -->
 
-**Solution:** _In 2–3 sentences, describe what you built._
+**Solution:** We compare a classical machine learning model with a quantum machine learning approach for network intrusion detection. Using the same dataset, we evaluate their detection accuracy and performance to understand the potential value of quantum computing in cybersecurity.
 
-**Key idea:** _The one-line technical summary of your approach._
+**Key idea:** Combine classical machine learning with quantum circuits to investigate whether quantum-enhanced feature representations can improve network traffic classification.
 
-**Why this works:** _How your approach addresses the problem statement._
-
+**Why this works:** Classical machine learning provides a baseline, while quantum machine learning lets us explore how quantum states, superposition, and quantum circuit operations can represent and process information differently. Comparing experimental results helps determine whether this approach offers measurable benefits.
 ---
+
 
 ## 🧩 Approach & Architecture
 
-<!--
-Walk through how it works. A simple pipeline diagram in text or Mermaid is ideal.
--->
-
 ```mermaid
-flowchart LR
-    A[Input Data] --> B[Preprocessing]
-    B --> C[Quantum Circuit / Model]
-    C --> D[Post-processing]
-    D --> E[Output]
+flowchart TD
+    A[Network Traffic Dataset] --> B[Data Cleaning and Preprocessing]
+    B --> C[Classical Random Forest Model]
+    B --> D[Feature Encoding]
+    D --> E[Quantum Circuit / QML Model]
+    C --> F[Performance Comparison]
+    E --> F
+    F --> G[Accuracy, Precision, Recall and F1-Score]
 ```
 
-1. **Input** — _what data goes in and in what format_
-2. **Preprocessing** — _cleaning, feature extraction, encoding_
-3. **Quantum core** — _the circuit, ansatz, or algorithm used_
-4. **Post-processing** — _decoding, measurement, scoring_
-5. **Output** — _what the user finally gets_
-
+1. **Input** — Network traffic data containing benign and malicious traffic records.
+2. **Preprocessing** — Clean the dataset, prepare features, and encode labels for model training.
+3. **Quantum core** — Encode selected features into quantum states and process them through a quantum circuit for classification.
+4. **Post-processing** — Measure the circuit outputs and convert them into predictions.
+5. **Output** — Compare classical and quantum model performance using classification metrics to evaluate the potential benefits of quantum machine learning.
 ---
 
 ## 🛠️ Tech Stack
 
 | Layer | Technology |
-| :--- | :--- |
+|---|---|
 | Language | Python 3.11+ |
-| Quantum SDK | Qiskit `>=1.0`, Qiskit Aer, Qiskit Runtime |
-| Optimisation | Qiskit Optimization / COBYLA / SPSA |
-| Simulation | AerSimulator (statevector / noisemodel) |
-| Environment | JupyterLab / VS Code, `venv` |
-| Version control | Git + GitHub |
+| Classical ML | Scikit-learn, Random Forest |
+| Quantum SDK | Qiskit |
+| Quantum Simulation | Qiskit Aer |
+| Quantum ML | Parameterized quantum circuits, feature encoding |
+| Optimization | COBYLA / SPSA (if used) |
+| Data Processing | Pandas, NumPy |
+| Environment | VS Code, Python virtual environment |
+| Version Control | Git, GitHub |
 
 ---
 
